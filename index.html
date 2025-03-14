@@ -3,46 +3,170 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sweet Child O Mine Stat Box</title>
+  <title>Sweet Child O' Mine Stat Box</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    
+    .stat-box {
+      width: 300px;
+      background: linear-gradient(145deg, #540d0d, #1a1a1a);
+      border: 3px solid #ffd700;
+      border-radius: 10px;
+      box-shadow: 0 0 15px #ffd700, 0 0 30px rgba(255, 215, 0, 0.5);
+      padding: 20px;
+      color: #fff;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .title {
+      text-align: center;
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 20px;
+      text-shadow: 0 0 10px #ffd700;
+      font-family: 'Courier New', monospace;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+    
+    .stat-row {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 15px;
+      border-bottom: 1px dashed #ffd700;
+      padding-bottom: 8px;
+    }
+    
+    .stat-label {
+      font-weight: bold;
+      text-transform: uppercase;
+      font-size: 14px;
+    }
+    
+    .stat-value {
+      font-family: 'Courier New', monospace;
+      letter-spacing: 1px;
+    }
+    
+    .guitar {
+      position: absolute;
+      top: -50px;
+      right: -30px;
+      width: 80px;
+      height: 150px;
+      opacity: 0.3;
+      transform: rotate(45deg);
+      z-index: 0;
+    }
+    
+    .guitar-neck {
+      position: absolute;
+      top: 0;
+      left: 40px;
+      width: 10px;
+      height: 120px;
+      background-color: #8B4513;
+    }
+    
+    .guitar-body {
+      position: absolute;
+      top: 95px;
+      left: 20px;
+      width: 50px;
+      height: 70px;
+      background-color: #ffd700;
+      border-radius: 50% 50% 50% 50%;
+    }
+    
+    .guitar-strings {
+      position: absolute;
+      top: 10px;
+      left: 43px;
+      width: 4px;
+      height: 110px;
+      background: linear-gradient(to bottom, 
+        transparent 0%, transparent 10%, 
+        #ffffff 10%, #ffffff 12%, 
+        transparent 12%, transparent 30%, 
+        #ffffff 30%, #ffffff 32%, 
+        transparent 32%, transparent 50%, 
+        #ffffff 50%, #ffffff 52%, 
+        transparent 52%, transparent 70%, 
+        #ffffff 70%, #ffffff 72%, 
+        transparent 72%, transparent 90%, 
+        #ffffff 90%, #ffffff 92%, 
+        transparent 92%);
+    }
+    
+    .rose {
+      position: absolute;
+      bottom: -20px;
+      left: -20px;
+      font-size: 40px;
+      color: #ff4d4d;
+      transform: rotate(-20deg);
+      opacity: 0.4;
+      z-index: 0;
+    }
+    
+    @keyframes flash {
+      0%, 100% { text-shadow: 0 0 10px #ffd700; }
+      50% { text-shadow: 0 0 20px #ffd700, 0 0 30px #ffd700; }
+    }
+    
+    .animation {
+      animation: flash 2s infinite;
+    }
+  </style>
 </head>
-<body style="font-family: Arial, sans-serif; background-color: #000; color: #fff; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0;">
-  <div style="width: 300px; background-color: #222; border: 3px solid #ffd700; border-radius: 10px; padding: 20px; position: relative; box-shadow: 0 0 15px #ffd700;">
-    <!-- Guitar symbol using HTML entities -->
-    <div style="position: absolute; top: 10px; right: 15px; font-size: 40px; transform: rotate(45deg); opacity: 0.3;">🎸</div>
+<body>
+  <div class="stat-box">
+    <div class="guitar">
+      <div class="guitar-neck"></div>
+      <div class="guitar-body"></div>
+      <div class="guitar-strings"></div>
+    </div>
+    <div class="rose">✿</div>
     
-    <!-- Rose symbol using HTML entities -->
-    <div style="position: absolute; bottom: 10px; left: 15px; font-size: 30px; color: #ff4d4d; opacity: 0.4;">✿</div>
+    <div class="title animation">Sweet Child O' Mine</div>
     
-    <h1 style="text-align: center; font-size: 24px; font-weight: bold; margin-bottom: 20px; color: #ffd700; text-transform: uppercase; letter-spacing: 2px;">Sweet Child O' Mine</h1>
-    
-    <div style="display: flex; justify-content: space-between; margin-bottom: 15px; border-bottom: 1px dashed #ffd700; padding-bottom: 8px;">
-      <span style="font-weight: bold; text-transform: uppercase; font-size: 14px;">Power</span>
-      <span style="font-family: monospace; letter-spacing: 1px;">87/100</span>
+    <div class="stat-row">
+      <div class="stat-label">Power</div>
+      <div class="stat-value">87/100</div>
     </div>
     
-    <div style="display: flex; justify-content: space-between; margin-bottom: 15px; border-bottom: 1px dashed #ffd700; padding-bottom: 8px;">
-      <span style="font-weight: bold; text-transform: uppercase; font-size: 14px;">Energy</span>
-      <span style="font-family: monospace; letter-spacing: 1px;">94/100</span>
+    <div class="stat-row">
+      <div class="stat-label">Energy</div>
+      <div class="stat-value">94/100</div>
     </div>
     
-    <div style="display: flex; justify-content: space-between; margin-bottom: 15px; border-bottom: 1px dashed #ffd700; padding-bottom: 8px;">
-      <span style="font-weight: bold; text-transform: uppercase; font-size: 14px;">Guitar Solo</span>
-      <span style="font-family: monospace; letter-spacing: 1px;">98/100</span>
+    <div class="stat-row">
+      <div class="stat-label">Guitar Solo</div>
+      <div class="stat-value">98/100</div>
     </div>
     
-    <div style="display: flex; justify-content: space-between; margin-bottom: 15px; border-bottom: 1px dashed #ffd700; padding-bottom: 8px;">
-      <span style="font-weight: bold; text-transform: uppercase; font-size: 14px;">Iconic Status</span>
-      <span style="font-family: monospace; letter-spacing: 1px;">95/100</span>
+    <div class="stat-row">
+      <div class="stat-label">Iconic Status</div>
+      <div class="stat-value">95/100</div>
     </div>
     
-    <div style="display: flex; justify-content: space-between; margin-bottom: 15px; border-bottom: 1px dashed #ffd700; padding-bottom: 8px;">
-      <span style="font-weight: bold; text-transform: uppercase; font-size: 14px;">Year</span>
-      <span style="font-family: monospace; letter-spacing: 1px;">1987</span>
+    <div class="stat-row">
+      <div class="stat-label">Year</div>
+      <div class="stat-value">1987</div>
     </div>
     
-    <div style="display: flex; justify-content: space-between; margin-bottom: 15px; border-bottom: 1px dashed #ffd700; padding-bottom: 8px;">
-      <span style="font-weight: bold; text-transform: uppercase; font-size: 14px;">Album</span>
-      <span style="font-family: monospace; letter-spacing: 1px;">Appetite for Destruction</span>
+    <div class="stat-row">
+      <div class="stat-label">Album</div>
+      <div class="stat-value">Appetite for Destruction</div>
     </div>
   </div>
 </body>
